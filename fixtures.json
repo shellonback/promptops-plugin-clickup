@@ -1,0 +1,397 @@
+{
+  "http": [
+    {
+      "method": "GET",
+      "url": "https://api.clickup.com/api/v2/user",
+      "body": {
+        "user": {
+          "id": 11,
+          "username": "Marta Rossi",
+          "email": "marta@acme.io"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://api.clickup.com/api/v2/team",
+      "body": {
+        "teams": [
+          {
+            "id": "9001",
+            "name": "Acme"
+          },
+          {
+            "id": "9002",
+            "name": "Acme Labs"
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://api.clickup.com/api/v2/team/*/space*",
+      "body": {
+        "spaces": [
+          {
+            "id": "501",
+            "name": "Storefront"
+          },
+          {
+            "id": "502",
+            "name": "Platform"
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://api.clickup.com/api/v2/space/*/folder*",
+      "body": {
+        "folders": [
+          {
+            "id": "701",
+            "name": "Q3 roadmap",
+            "lists": [
+              {
+                "id": "9101",
+                "name": "Sprint 14"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://api.clickup.com/api/v2/space/*/list*",
+      "body": {
+        "lists": [
+          {
+            "id": "9100",
+            "name": "Backlog"
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://api.clickup.com/api/v2/folder/*/list*",
+      "body": {
+        "lists": [
+          {
+            "id": "9101",
+            "name": "Sprint 14"
+          },
+          {
+            "id": "9102",
+            "name": "Sprint 15"
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://api.clickup.com/api/v2/list/*/task*",
+      "body": {
+        "tasks": [
+          {
+            "id": "86c1a",
+            "name": "Login redirect loses the return URL",
+            "description": "After signing in, people land on the home page instead of the page they came from.\n\nSteps:\n1. Open /orders while signed out\n2. Sign in\n3. You land on /",
+            "status": {
+              "status": "In Progress",
+              "color": "#5b5bd6",
+              "type": "custom"
+            },
+            "priority": {
+              "priority": "urgent"
+            },
+            "assignees": [
+              {
+                "id": 12,
+                "username": "Devon Lee",
+                "email": "devon@acme.io"
+              },
+              {
+                "id": 11,
+                "username": "Marta Rossi",
+                "email": "Marta@Acme.io"
+              }
+            ],
+            "tags": [
+              {
+                "name": "bug"
+              },
+              {
+                "name": "auth"
+              }
+            ],
+            "url": "https://app.clickup.com/t/86c1a",
+            "date_updated": "1789400400000",
+            "orderindex": "0.0"
+          },
+          {
+            "id": "86c1b",
+            "name": "Add CSV export to the orders page",
+            "description": "Finance asks for a monthly export.",
+            "status": {
+              "status": "To Do",
+              "color": "#87909e",
+              "type": "custom"
+            },
+            "priority": {
+              "priority": "normal"
+            },
+            "assignees": [],
+            "tags": [
+              {
+                "name": "feature"
+              }
+            ],
+            "url": "https://app.clickup.com/t/86c1b",
+            "date_updated": "1789300400000",
+            "orderindex": "0.0"
+          },
+          {
+            "id": "86c1c",
+            "name": "Checkout button hidden on small screens",
+            "description": "",
+            "status": {
+              "status": "To Do",
+              "color": "#87909e",
+              "type": "custom"
+            },
+            "priority": {
+              "priority": "high"
+            },
+            "assignees": [
+              {
+                "id": 11,
+                "username": "Marta Rossi",
+                "email": "Marta@Acme.io"
+              }
+            ],
+            "tags": [
+              {
+                "name": "bug"
+              },
+              {
+                "name": "mobile"
+              }
+            ],
+            "url": "https://app.clickup.com/t/86c1c",
+            "date_updated": "1789410400000",
+            "orderindex": "0.0"
+          },
+          {
+            "id": "86c1d",
+            "name": "Rotate the staging keys",
+            "description": "",
+            "status": {
+              "status": "Review",
+              "color": "#e2b155",
+              "type": "custom"
+            },
+            "priority": null,
+            "assignees": [
+              {
+                "id": 12,
+                "username": "Devon Lee",
+                "email": "devon@acme.io"
+              }
+            ],
+            "tags": [
+              {
+                "name": "ops"
+              }
+            ],
+            "url": "https://app.clickup.com/t/86c1d",
+            "date_updated": "1789420400000",
+            "orderindex": "0.0"
+          },
+          {
+            "id": "86c1e",
+            "name": "Upgrade payment SDK to v5",
+            "description": "Done in release 3.2.",
+            "status": {
+              "status": "Complete",
+              "color": "#1a9d5c",
+              "type": "custom"
+            },
+            "priority": {
+              "priority": "low"
+            },
+            "assignees": [
+              {
+                "id": 12,
+                "username": "Devon Lee",
+                "email": "devon@acme.io"
+              }
+            ],
+            "tags": [
+              {
+                "name": "chore"
+              }
+            ],
+            "url": "https://app.clickup.com/t/86c1e",
+            "date_updated": "1788400400000",
+            "orderindex": "0.0"
+          }
+        ],
+        "last_page": true
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://api.clickup.com/api/v2/list/*",
+      "body": {
+        "id": "9101",
+        "name": "Sprint 14",
+        "statuses": [
+          {
+            "status": "To Do",
+            "type": "open",
+            "orderindex": 0,
+            "color": "#87909e"
+          },
+          {
+            "status": "In Progress",
+            "type": "custom",
+            "orderindex": 1,
+            "color": "#5b5bd6"
+          },
+          {
+            "status": "Review",
+            "type": "custom",
+            "orderindex": 2,
+            "color": "#e2b155"
+          },
+          {
+            "status": "Complete",
+            "type": "closed",
+            "orderindex": 3,
+            "color": "#1a9d5c"
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://api.clickup.com/api/v2/task/*/comment*",
+      "body": {
+        "comments": [
+          {
+            "id": "c1",
+            "comment_text": "Reproduced on Safari 17. The redirect keeps the old session cookie.",
+            "user": {
+              "username": "Marta Rossi",
+              "email": "marta@acme.io"
+            },
+            "date": "1789390400000"
+          },
+          {
+            "id": "c2",
+            "comment_text": "",
+            "comment": [
+              {
+                "text": "Fix is in review, "
+              },
+              {
+                "text": "@Marta",
+                "type": "tag"
+              },
+              {
+                "text": " can you check?"
+              }
+            ],
+            "user": {
+              "username": "Devon Lee",
+              "email": "devon@acme.io"
+            },
+            "date": "1789400400000"
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://api.clickup.com/api/v2/task/*",
+      "body": {
+        "id": "86c1a",
+        "name": "Login redirect loses the return URL",
+        "description": "After signing in, people land on the home page instead of the page they came from.\n\nSteps:\n1. Open /orders while signed out\n2. Sign in\n3. You land on /",
+        "status": {
+          "status": "In Progress",
+          "color": "#5b5bd6",
+          "type": "custom"
+        },
+        "priority": {
+          "priority": "urgent"
+        },
+        "assignees": [
+          {
+            "id": 12,
+            "username": "Devon Lee",
+            "email": "devon@acme.io"
+          },
+          {
+            "id": 11,
+            "username": "Marta Rossi",
+            "email": "Marta@Acme.io"
+          }
+        ],
+        "tags": [
+          {
+            "name": "bug"
+          },
+          {
+            "name": "auth"
+          }
+        ],
+        "url": "https://app.clickup.com/t/86c1a",
+        "date_updated": "1789400400000",
+        "orderindex": "0.0"
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "https://api.clickup.com/api/v2/task/*",
+      "body": {
+        "id": "86c1a",
+        "name": "Login redirect loses the return URL",
+        "description": "After signing in, people land on the home page instead of the page they came from.\n\nSteps:\n1. Open /orders while signed out\n2. Sign in\n3. You land on /",
+        "status": {
+          "status": "Review",
+          "color": "#e2b155",
+          "type": "custom"
+        },
+        "priority": {
+          "priority": "urgent"
+        },
+        "assignees": [
+          {
+            "id": 12,
+            "username": "Devon Lee",
+            "email": "devon@acme.io"
+          },
+          {
+            "id": 11,
+            "username": "Marta Rossi",
+            "email": "Marta@Acme.io"
+          }
+        ],
+        "tags": [
+          {
+            "name": "bug"
+          },
+          {
+            "name": "auth"
+          }
+        ],
+        "url": "https://app.clickup.com/t/86c1a",
+        "date_updated": "1789400400000",
+        "orderindex": "0.0"
+      }
+    }
+  ]
+}
