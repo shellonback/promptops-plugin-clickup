@@ -5,16 +5,41 @@
   "version": "0.1.0",
   "category": "tasks",
   "description": "Brings the tasks of your ClickUp lists into the Teams board and keeps their status in sync.",
+  "repository": "https://github.com/shellonback/promptops-plugin-clickup",
   "minAppVersion": "2.1.0",
   "entry": "dist/plugin.js",
-  "permissions": ["net:api.clickup.com", "secrets", "tasks:read", "tasks:write", "prompt:propose"],
+  "permissions": [
+    "net:api.clickup.com",
+    "secrets",
+    "tasks:read",
+    "tasks:write",
+    "prompt:propose"
+  ],
   "config": {
     "fields": [
-      { "key": "token", "type": "secret", "label": "ClickUp personal API token (starts with pk_)", "required": true },
-      { "key": "includeSubtasks", "type": "boolean", "label": "Include subtasks", "default": false }
+      {
+        "key": "token",
+        "type": "secret",
+        "label": "ClickUp personal API token (starts with pk_)",
+        "required": true
+      },
+      {
+        "key": "includeSubtasks",
+        "type": "boolean",
+        "label": "Include subtasks",
+        "default": false
+      }
     ]
   },
   "contributes": {
-    "actions": [{ "id": "task-to-agent", "title": "Propose to agent", "contexts": ["task"] }]
+    "actions": [
+      {
+        "id": "task-to-agent",
+        "title": "Propose to agent",
+        "contexts": [
+          "task"
+        ]
+      }
+    ]
   }
 }
