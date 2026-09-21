@@ -1,11 +1,11 @@
-// Runs dist/plugin.js outside PromptOps, with a fake SDK. Zero dependencies:
+// Runs src/plugin.js outside PromptOps, with a fake SDK. Zero dependencies:
 //   node --test
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
 
-const bundle = readFileSync(new URL('../dist/plugin.js', import.meta.url), 'utf8');
+const bundle = readFileSync(new URL('../src/plugin.js', import.meta.url), 'utf8');
 const fixtures = JSON.parse(readFileSync(new URL('../fixtures.json', import.meta.url), 'utf8')).http;
 const glob = (p) => new RegExp('^' + p.split('*').map((s) => s.replace(/[.+?^${}()|[\]\\]/g, '\\$&')).join('.*') + '$');
 

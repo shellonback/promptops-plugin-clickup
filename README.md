@@ -10,7 +10,9 @@ Brings the tasks of your ClickUp lists into the **Teams › Board** of [PromptOp
 |---|---|
 | Plugin id | `promptops.clickup` |
 | Section | `tasks` |
-| Status | Version 0.1.0. Runs in the plugin sandbox. The board does not read from plugins yet: see [MIGRATION.md](MIGRATION.md) |
+| Status | Version 0.1.1. Runs in the plugin sandbox. The board does not read from plugins yet: see [MIGRATION.md](MIGRATION.md) |
+
+**Where the code is.** All of it is in [`src/plugin.js`](src/plugin.js): one file of plain JavaScript, with no build step. What you read there is exactly what PromptOps runs, and what was reviewed.
 
 ## What it does
 
@@ -58,7 +60,7 @@ Open http://127.0.0.1:4173 and choose **tasks · ClickUp**. It starts in **Fixtu
 | File | What it is |
 |---|---|
 | `promptops-plugin.json` | The manifest: id, section, host, permissions, settings |
-| `dist/plugin.js` | The plugin. One file, no dependencies, no build step |
+| `src/plugin.js` | The source of the plugin. One file of plain JavaScript, no dependencies and no build step: what you read is what runs |
 | `fixtures.json` | A sample ClickUp workspace for offline testing. Not used by PromptOps |
 | `test/plugin.test.mjs` | Tests that run the plugin outside PromptOps with a fake SDK |
 
