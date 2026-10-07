@@ -100,7 +100,20 @@ promptops.tasks.registerSource({
     if (!parentId) return ((await clickup(sdk, '/team')).teams || []).map(container('team', 'workspace', true));
     const { level, id } = parse(parentId);
     if (level === 'team') {
-      return ((await clickup(sdk, `/team/${id}/space${query({ archived: 'false' })}`)).spaces || []).map(container('space', 'project', true));
+      // Spaces list only the ones you are a member of. Lists and folders shared with you
+      // from other spaces live in "Shared with me": without them a guest sees an empty workspace.
+      const [spaces, shared] = await Promise.all([
+        clickup(sdk, `/team/${id}/space${query({ archived: 'false' })}`),
+        clickup(sdk, `/team/${id}/shared`).catch(() => null),
+      ]);
+      const seen = new Set();
+      const once = (c) => (seen.has(c.id) ? false : seen.add(c.id));
+      const s = (shared && shared.shared) || {};
+      return [
+        ...(spaces.spaces || []).map(container('space', 'project', true)),
+        ...(s.folders || []).map(container('folder', 'folder', true)),
+        ...(s.lists || []).map(container('list', 'list', false)),
+      ].filter(once);
     }
     if (level === 'space') {
       const [folders, lists] = await Promise.all([

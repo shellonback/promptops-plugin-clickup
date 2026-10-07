@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "promptops.clickup",
   "name": "ClickUp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "category": "tasks",
   "description": "Brings the tasks of your ClickUp lists into the Teams board and keeps their status in sync.",
   "repository": "https://github.com/shellonback/promptops-plugin-clickup",

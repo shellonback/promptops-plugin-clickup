@@ -56,7 +56,7 @@ test('containers walk workspace, space, folder and list', async () => {
 
   const spaces = await source.listContainers('team:9001', sdk);
   assert.equal(spaces[0].id, 'space:501');
-  assert.match(calls.at(-1).url, /\/team\/9001\/space\?archived=false$/);
+  assert.ok(calls.some((c) => /\/team\/9001\/space\?archived=false$/.test(c.url)));
 
   const inSpace = await source.listContainers('space:501', sdk);
   assert.deepEqual(inSpace.map((c) => [c.id, c.kind, c.hasChildren]), [['folder:701', 'folder', true], ['list:9100', 'list', false]]);
@@ -64,6 +64,17 @@ test('containers walk workspace, space, folder and list', async () => {
   const inFolder = await source.listContainers('folder:701', sdk);
   assert.deepEqual(inFolder.map((c) => c.id), ['list:9101', 'list:9102']);
   assert.deepEqual(await source.listContainers('list:9101', sdk), []);
+});
+
+test('the workspace also shows folders and lists shared with you', async () => {
+  const shared = { shared: { tasks: [], folders: [{ id: '801', name: 'Guest folder' }], lists: [{ id: '9300', name: 'Guest board' }, { id: '9300', name: 'Guest board' }] } };
+  const { source, sdk } = load({ respond: (c) => (/\/team\/9001\/shared$/.test(c.url) ? { status: 200, body: JSON.stringify(shared) } : null) });
+  const top = await source.listContainers('team:9001', sdk);
+  assert.deepEqual(top.map((c) => [c.id, c.hasChildren]), [['space:501', true], ['space:502', true], ['folder:801', true], ['list:9300', false]]);
+
+  // No access to "Shared with me" (older plans): the spaces still show.
+  const { source: s2, sdk: k2 } = load();
+  assert.deepEqual((await s2.listContainers('team:9001', k2)).map((c) => c.id), ['space:501', 'space:502']);
 });
 
 test('statuses are ordered, normalized and typed', async () => {

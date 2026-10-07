@@ -10,7 +10,7 @@ Brings the tasks of your ClickUp lists into the **Teams › Board** of [PromptOp
 |---|---|
 | Plugin id | `promptops.clickup` |
 | Section | `tasks` |
-| Status | Version 0.1.1. Runs in the plugin sandbox. The board does not read from plugins yet: see [MIGRATION.md](MIGRATION.md) |
+| Status | Version 0.1.2. Lists and folders shared with you show up under the workspace. Runs in the plugin sandbox. The board does not read from plugins yet: see [MIGRATION.md](MIGRATION.md) |
 
 **Where the code is.** All of it is in [`src/plugin.js`](src/plugin.js): one file of plain JavaScript, with no build step. What you read there is exactly what PromptOps runs, and what was reviewed.
 
